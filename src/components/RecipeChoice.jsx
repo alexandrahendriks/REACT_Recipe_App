@@ -2,10 +2,9 @@ import { Button } from "./UI/Button";
 
 export const RecipeChoice = ({ recipe, onClick }) => {
   return (
-    <div className="recipe" onClick={onClick}>
-      <Button onClick={() => onClick()} variant="ghost">
-        Back
-      </Button>
+    <div className="recipe">
+      <Button onClick={() => onClick()} variant="ghost" />
+
       <div className="container">
         <img
           className="photo"
