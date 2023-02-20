@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Center, Heading } from "@chakra-ui/react";
+import { Center, Container, Heading } from "@chakra-ui/react";
 import { data } from "../utils/data";
 import { SearchRecipe } from "../components/SearchRecipe";
 import { RecipeChoice } from "../components/RecipeChoice";
@@ -9,7 +9,7 @@ export const RecipesPage = () => {
   const title = "Recipe Finder App";
 
   return (
-    <div className="App">
+    <Container className="App" maxWidth={"100vw"}>
       {useRecipe ? (
         <>
           <RecipeChoice recipe={useRecipe} onClick={setUserRecipe} />
@@ -26,6 +26,6 @@ export const RecipesPage = () => {
           </Center>
         </>
       )}
-    </div>
+    </Container>
   );
 };
