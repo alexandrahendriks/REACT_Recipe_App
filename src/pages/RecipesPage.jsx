@@ -14,6 +14,7 @@ export const RecipesPage = () => {
       padding={"0px"}
       backgroundColor={"rgb(22, 127, 180)"}
       maxWidth={"100vw"}
+      textAlign={"center"}
     >
       {useRecipe ? (
         <>

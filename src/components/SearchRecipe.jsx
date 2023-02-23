@@ -28,6 +28,7 @@ export const SearchRecipe = ({ recipes, onClick }) => {
         gridTemplateColumns={"repeat(1, 1fr)"}
         gridTemplateRows={"auto"}
         marginLeft={"15px"}
+        mr="10px"
       >
         <DisplayRecipes
           className="displaying-all-recipes"
