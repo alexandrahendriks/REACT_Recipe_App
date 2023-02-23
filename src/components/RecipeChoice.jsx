@@ -19,6 +19,7 @@ export const RecipeChoice = ({ recipe, onClick }) => {
       padding="0px"
     >
       <Button
+        className="back-button"
         onClick={() => onClick()}
         variant="ghost"
         marginTop="15px"
@@ -45,14 +46,24 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           flexDirection={"column"}
           alignItems="flex-start"
         >
-          <Badge>{recipe.mealType}</Badge>
-          <Heading fontSize={"16px"}>{recipe.label}</Heading>
-          <Text>Total cooking time: {recipe.totalTime} minutes</Text>
-          <Text>Servings: {recipe.yield}</Text>
-          <Heading fontSize={"12px"}>Ingerdients:</Heading>
-          <Container>
+          <Badge className="recipe-meal-type">{recipe.mealType}</Badge>
+          <Heading className="recipe-name" fontSize={"16px"}>
+            {recipe.label}
+          </Heading>
+          <Text className="cooking-time">
+            Total cooking time: {recipe.totalTime} minutes
+          </Text>
+          <Text className="servings">Servings: {recipe.yield}</Text>
+          <Heading className="ingerdients-title" fontSize={"12px"}>
+            Ingerdients:
+          </Heading>
+          <Container className="ingredients">
             {recipe.ingredientLines.map((item) => {
-              return <WrapItem key={item}>{item}</WrapItem>;
+              return (
+                <WrapItem className="ingredient" key={item}>
+                  {item}
+                </WrapItem>
+              );
             })}
           </Container>
         </Box>
@@ -62,26 +73,51 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           flexDirection={"column"}
           overflow="hidden"
         >
-          <Heading fontSize={"12px"}>Health Labels:</Heading>
+          <Heading className="recipe-health-labels-title" fontSize={"12px"}>
+            Health Labels:
+          </Heading>
           <Container>
             {recipe.healthLabels.map((label) => {
-              return <Badge key={label}>{label}</Badge>;
+              return (
+                <Badge className="recipe-health-label" key={label}>
+                  {label}
+                </Badge>
+              );
             })}
           </Container>
-          <Heading fontSize={"12px"}>Diet:</Heading>
-          <Container display={"flex"} flexDirection="row" flexWrap={"wrap"}>
+          <Heading className="recipe-diet-title" fontSize={"12px"}>
+            Diet:
+          </Heading>
+          <Container
+            className="diet-title-labels"
+            display={"flex"}
+            flexDirection="row"
+            flexWrap={"wrap"}
+          >
             {recipe.dietLabels.map((label) => {
-              return <Badge key={label}>{label}</Badge>;
+              return (
+                <Badge className="diet-title-label" key={label}>
+                  {label}
+                </Badge>
+              );
             })}
           </Container>
 
-          <Heading fontSize={"12px"}>Cautions:</Heading>
-          <Container>
+          <Heading className="recipe-cautions" fontSize={"12px"}>
+            Cautions:
+          </Heading>
+          <Container className="recipe-cautions-labels">
             {recipe.cautions.map((label) => {
-              return <Badge key={label}>{label}</Badge>;
+              return (
+                <Badge className="recipe-cautions-label" key={label}>
+                  {label}
+                </Badge>
+              );
             })}
           </Container>
-          <Heading fontSize={"12px"}>Total nutrients:</Heading>
+          <Heading className="recipe-total-nutrients-title" fontSize={"12px"}>
+            Total nutrients:
+          </Heading>
           <div>
             {recipe.totalNutrients.ENERC_KCAL.label}:
             {Math.round(recipe.totalNutrients.ENERC_KCAL.quantity)}

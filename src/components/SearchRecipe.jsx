@@ -1,3 +1,4 @@
+import { Grid, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import { DisplayRecipes } from "./DisplayRecipes";
 import { TextInput } from "./UI/TextInput";
@@ -20,14 +21,20 @@ export const SearchRecipe = ({ recipes, onClick }) => {
   };
 
   return (
-    <div>
-      <>
-        <label>Search for recipes:</label>
-        <TextInput onChange={handleChange} />
-        <DisplayRecipes onClick={onClick} recipes={matchedRecipes} />
-      </>
-    </div>
+    <>
+      <TextInput className="input-field" onChange={handleChange} />
+      <Grid
+        className="grid-continer-recipes"
+        gridTemplateColumns={"repeat(1, 1fr)"}
+        gridTemplateRows={"auto"}
+        marginLeft={"15px"}
+      >
+        <DisplayRecipes
+          className="displaying-all-recipes"
+          onClick={onClick}
+          recipes={matchedRecipes}
+        />
+      </Grid>
+    </>
   );
 };
-
-// Doesn't filter right away down to item
