@@ -98,7 +98,9 @@ export const DisplayRecipe = ({
         </Box>
         <Flex flexDir={"row"} columnGap={"5px"}>
           <Box className="dish-type">Dish:</Box>
-          <Box fontWeight={"bold"}>{dishType}</Box>
+          <Box fontSize={"16px"} fontWeight={"bold"}>
+            {dishType}
+          </Box>
         </Flex>
         <Box mt="5px">Cautions:</Box>
         <Box
