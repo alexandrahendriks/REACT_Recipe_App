@@ -6,23 +6,42 @@ import { RecipeChoice } from "../components/RecipeChoice";
 
 export const RecipesPage = () => {
   const [useRecipe, setUserRecipe] = useState();
-  const title = "Recipe Finder App";
+  const title = "Winc Recipe Checker";
 
   return (
-    <Container className="App" maxWidth={"100vw"}>
+    <Container
+      className="App"
+      padding={"0px"}
+      backgroundColor={"rgb(22, 127, 180)"}
+      maxWidth={"100vw"}
+    >
       {useRecipe ? (
         <>
-          <RecipeChoice recipe={useRecipe} onClick={setUserRecipe} />
+          <RecipeChoice
+            className="chosen-recipe-page"
+            recipe={useRecipe}
+            onClick={setUserRecipe}
+          />
         </>
       ) : (
         <>
           <Center
-            paddingTop="50px"
-            backgroundColor={"rgb(69, 198, 241)"}
+            className="the-whole-recipes-page"
+            pt="30px"
+            pb="80px"
+            display={"flex"}
             flexDir="column"
+            justifyContent={"center"}
+            alignItems={"center"}
           >
-            <Heading marginBottom={"20px"}>{title}</Heading>
-            <SearchRecipe recipes={data.hits} onClick={setUserRecipe} />
+            <Heading className="title" marginBottom={"25px"} color="white">
+              {title}
+            </Heading>
+            <SearchRecipe
+              className="inputfield-and-displaying-recipes"
+              recipes={data.hits}
+              onClick={setUserRecipe}
+            />
           </Center>
         </>
       )}
