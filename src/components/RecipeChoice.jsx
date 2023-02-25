@@ -6,6 +6,7 @@ import {
   Heading,
   Text,
   WrapItem,
+  Flex,
 } from "@chakra-ui/react";
 import { Button } from "./UI/Button";
 
@@ -14,15 +15,18 @@ export const RecipeChoice = ({ recipe, onClick }) => {
     <Container
       className="recipe"
       backgroundColor={"white"}
-      maxWidth="70vw"
+      maxWidth="95vw"
       minHeight={"100vh"}
       padding="0px"
+      ml={"10px"}
+      mr={"10px"}
+      overflow={"auto"}
     >
       <Button
         className="back-button"
         onClick={() => onClick()}
+        display="flex"
         variant="ghost"
-        marginTop="15px"
         marginBottom="15px"
       />
       <Image
@@ -38,53 +42,82 @@ export const RecipeChoice = ({ recipe, onClick }) => {
         className="wrapper"
         display={"flex"}
         flexDirection={"row"}
+        alignItems={"flex-start"}
+        justifyContent="flex-start"
         margin="0"
+        mt="15px"
+        mb="15px"
       >
         <Box
           className="left-side"
           display={"flex"}
           flexDirection={"column"}
           alignItems="flex-start"
+          justifyContent="flex-start"
+          textAlign={"left"}
         >
-          <Badge className="recipe-meal-type">{recipe.mealType}</Badge>
-          <Heading className="recipe-name" fontSize={"16px"}>
+          <Badge
+            className="recipe-meal-type"
+            color={"grey"}
+            backgroundColor={"white"}
+            padding="0px"
+            mb="5px"
+          >
+            {recipe.mealType}
+          </Badge>
+          <Heading className="recipe-name" fontSize={"18px"} mb={"5px"}>
             {recipe.label}
           </Heading>
-          <Text className="cooking-time">
+          <Text
+            className="cooking-time"
+            lineHeight={"normal"}
+            fontSize={"14px"}
+          >
             Total cooking time: {recipe.totalTime} minutes
           </Text>
-          <Text className="servings">Servings: {recipe.yield}</Text>
-          <Heading className="ingerdients-title" fontSize={"12px"}>
+          <Text className="servings" fontSize={"14px"}>
+            Servings: {recipe.yield}
+          </Text>
+          <Heading className="ingerdients-title" fontSize={"16px"} mb="5px">
             Ingerdients:
           </Heading>
-          <Container className="ingredients">
-            {recipe.ingredientLines.map((item) => {
-              return (
-                <WrapItem className="ingredient" key={item}>
-                  {item}
-                </WrapItem>
-              );
-            })}
-          </Container>
+          {recipe.ingredientLines.map((item) => {
+            return (
+              <WrapItem className="ingredient" m={"0px"} key={item}>
+                {item}
+              </WrapItem>
+            );
+          })}
         </Box>
         <Container
           className="right-side"
           display={"flex"}
           flexDirection={"column"}
-          overflow="hidden"
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          textAlign={"left"}
         >
-          <Heading className="recipe-health-labels-title" fontSize={"12px"}>
+          <Heading
+            className="recipe-health-labels-title"
+            fontSize={"13px"}
+            fontWeight="normal"
+          >
             Health Labels:
           </Heading>
-          <Container>
+          <Flex flexWrap={"wrap"} columnGap="2" rowGap={"1"}>
             {recipe.healthLabels.map((label) => {
               return (
-                <Badge className="recipe-health-label" key={label}>
+                <Badge
+                  className="recipe-health-label"
+                  fontSize={"12px"}
+                  backgroundColor={"#D6BCFA"}
+                  key={label}
+                >
                   {label}
                 </Badge>
               );
             })}
-          </Container>
+          </Flex>
           <Heading className="recipe-diet-title" fontSize={"12px"}>
             Diet:
           </Heading>
@@ -142,11 +175,6 @@ export const RecipeChoice = ({ recipe, onClick }) => {
             {recipe.totalNutrients.CHOLE.label}:
             {Math.round(recipe.totalNutrients.CHOLE.quantity)}
             {recipe.totalNutrients.CHOLE.unit}
-          </div>
-          <div>
-            {recipe.totalNutrients.SUGAR.label}:
-            {Math.round(recipe.totalNutrients.SUGAR.quantity)}
-            {recipe.totalNutrients.SUGAR.unit}
           </div>
           <div>
             {recipe.totalNutrients.NA.label}:

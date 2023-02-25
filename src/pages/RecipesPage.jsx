@@ -14,6 +14,7 @@ export const RecipesPage = () => {
       padding={"0px"}
       backgroundColor={"rgb(22, 127, 180)"}
       maxWidth={"100vw"}
+      minHeight={"100vh"}
       textAlign={"center"}
     >
       {useRecipe ? (
@@ -34,6 +35,7 @@ export const RecipesPage = () => {
             flexDir="column"
             justifyContent={"center"}
             alignItems={"center"}
+            minHeight={"100vh"}
           >
             <Heading className="title" marginBottom={"25px"} color="white">
               {title}
