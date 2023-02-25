@@ -35,7 +35,6 @@ export const RecipesPage = () => {
             flexDir="column"
             justifyContent={"center"}
             alignItems={"center"}
-            minHeight={"100vh"}
           >
             <Heading className="title" marginBottom={"25px"} color="white">
               {title}
