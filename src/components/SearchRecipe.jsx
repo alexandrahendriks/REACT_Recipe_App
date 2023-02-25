@@ -23,7 +23,12 @@ export const SearchRecipe = ({ recipes, onClick }) => {
   return (
     <>
       <TextInput onChange={handleChange} />
-      <Flex ml={"15px"} mr={"15px"} justifyContent="center">
+      <Flex
+        className="display-recipes-flex"
+        ml={"15px"}
+        mr={"15px"}
+        justifyContent="center"
+      >
         <DisplayRecipes onClick={onClick} recipes={matchedRecipes} />
       </Flex>
     </>
