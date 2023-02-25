@@ -11,42 +11,34 @@ export const RecipesPage = () => {
   return (
     <Container
       className="App"
-      padding={"0px"}
-      backgroundColor={"rgb(22, 127, 180)"}
-      maxWidth={"100vw"}
-      minHeight={"100vh"}
-      textAlign={"center"}
+      padding="0px"
+      backgroundColor="rgb(22, 127, 180)"
+      maxWidth="auto"
+      minHeight="100vh"
+      textAlign="center"
     >
       {useRecipe ? (
         <>
-          <RecipeChoice
-            className="chosen-recipe-page"
-            recipe={useRecipe}
-            onClick={setUserRecipe}
-          />
+          <RecipeChoice recipe={useRecipe} onClick={setUserRecipe} />
         </>
       ) : (
         <>
           <Center
-            className="the-whole-recipes-page"
             pt="30px"
             pb="80px"
-            display={"flex"}
+            display="flex"
             flexDir="column"
-            justifyContent={"center"}
-            alignItems={"center"}
+            justifyContent="center"
           >
-            <Heading className="title" marginBottom={"25px"} color="white">
+            <Heading marginBottom="25px" color="white">
               {title}
             </Heading>
-            <SearchRecipe
-              className="inputfield-and-displaying-recipes"
-              recipes={data.hits}
-              onClick={setUserRecipe}
-            />
+            <SearchRecipe recipes={data.hits} onClick={setUserRecipe} />
           </Center>
         </>
       )}
     </Container>
   );
 };
+
+//DONE!!!

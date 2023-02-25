@@ -1,4 +1,4 @@
-import { Badge, Box, Container, Flex, Image } from "@chakra-ui/react";
+import { Badge, Box, Flex, Image } from "@chakra-ui/react";
 
 export const DisplayRecipe = ({
   image,
@@ -15,7 +15,7 @@ export const DisplayRecipe = ({
   return (
     <Flex
       className="recipes"
-      backgroundColor={"white"}
+      backgroundColor="white"
       flexDirection={"column"}
       marginBottom={"20px"}
       borderTopRadius={"10px"}

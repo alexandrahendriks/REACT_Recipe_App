@@ -3,10 +3,19 @@ import { DisplayRecipe } from "./UI/DisplayRecipe";
 
 export const DisplayRecipes = ({ recipes, onClick }) => {
   return (
-    <Grid className="recipes-grid" gap={3}>
+    <Grid
+      className="recipes-grid"
+      gridTemplateColumns={{
+        base: "repeat(1, 1fr)",
+        md: "repeat(2, 1fr)",
+        lg: "repeat(4, 1fr)",
+      }}
+      gridTemplateRows={"auto"}
+      gap={3}
+      justifyContent={{ lg: "center" }}
+    >
       {recipes.map((recipe) => (
         <DisplayRecipe
-          className="one-recipe"
           key={recipe.recipe.url}
           id={recipe.recipe.url}
           recipe={recipe.recipe}
@@ -29,5 +38,3 @@ export const DisplayRecipes = ({ recipes, onClick }) => {
     </Grid>
   );
 };
-
-/*GOOD*/
