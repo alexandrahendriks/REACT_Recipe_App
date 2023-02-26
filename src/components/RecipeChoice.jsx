@@ -13,131 +13,130 @@ import { Button } from "./UI/Button";
 export const RecipeChoice = ({ recipe, onClick }) => {
   return (
     <Container
-      className="recipe"
-      backgroundColor={"white"}
-      maxWidth={{ base: "95vw", md: "70vw" }}
-      minHeight={{ base: "140vh", md: "110vh" }}
+      backgroundColor="white"
+      maxWidth={{ base: "95vw", sm: "80vw", md: "70vw" }}
+      minHeight={{ base: "140vh", sm: "110vh", md: "110vh" }}
       padding="0px"
-      ml={{ base: "auto", md: "auto", lg: "auto", xl: "auto" }}
-      mr={{ base: "auto" }}
+      ml="auto"
+      mr="auto"
     >
-      <Button //GOOD
+      <Button
         className="back-button"
         onClick={() => onClick()}
         display="flex"
         variant="ghost"
         marginBottom="15px"
       />
-      <Image //GOOD
+      <Image
         className="photo"
         src={recipe.image}
         alt=""
         width="100%"
         height="200px"
         objectFit="cover"
+        mb="15px"
       />
-
       <Container
-        className="wrapper"
-        display={"flex"}
-        flexDirection={"row"}
-        columnGap={{ md: "5" }}
-        alignItems={"flex-start"}
-        justifyContent="flex-start"
-        mt="15px"
+        display="flex"
+        flexDirection="row"
+        columnGap={{ sm: "2", md: "5", lg: "5" }}
+        justifyContent="center"
+        flexBasis="auto"
+        flexGrow="1"
+        flexShrink="0"
+        m="auto"
       >
         <Box
-          className="left-side"
-          display={"flex"}
-          flexDirection={"column"}
-          alignItems="flex-start"
-          justifyContent="flex-start"
-          textAlign={"left"}
+          display="flex"
+          flexDirection="column"
+          textAlign="left"
+          flexGrow="1"
+          flexShrink="0"
+          flexBasis={{ base: "100px", sm: "100px", md: "200px", lg: "300px" }}
           mb="20px"
         >
           <Badge
-            className="recipe-meal-type"
-            color={"grey"}
-            backgroundColor={"white"}
+            color="grey"
+            backgroundColor="white"
+            fontSize={{ base: "12px", lg: "14px" }}
             padding="0px"
             mb="5px"
           >
             {recipe.mealType}
           </Badge>
-          <Heading className="recipe-name" fontSize={"18px"} mb={"5px"}>
+          <Heading fontSize={{ base: "18px", lg: "22px" }} mb="5px">
             {recipe.label}
           </Heading>
+          <Box mb="10px" fontSize={{ base: "14px", lg: "16px" }}>
+            Dish type:
+            <Badge
+              mb="3px"
+              backgroundColor="white"
+              fontSize={{ base: "14px", lg: "16px" }}
+              fontWeight="normal"
+            >
+              {recipe.dishType}
+            </Badge>
+          </Box>
           <Text
-            className="cooking-time"
-            lineHeight={"normal"}
-            fontSize={"14px"}
+            lineHeight="normal"
+            fontSize={{ base: "14px", lg: "16px" }}
+            mb="10px"
           >
             Total cooking time: {recipe.totalTime} minutes
           </Text>
-          <Text className="servings" fontSize={"14px"} mb="10px">
+          <Text fontSize={{ base: "14px", lg: "16px" }} mb="10px">
             Servings: {recipe.yield}
           </Text>
-          <Heading className="ingerdients-title" fontSize={"16px"} mb="5px">
+          <Heading fontSize={{ base: "16px", lg: "18px" }} mb="5px">
             Ingerdients:
           </Heading>
           {recipe.ingredientLines.map((item) => {
             return (
-              <WrapItem className="ingredient" m={"0px"} key={item}>
+              <WrapItem fontSize={{ base: "15px", lg: "18px" }} key={item}>
                 {item}
               </WrapItem>
             );
           })}
         </Box>
-        <Container
-          className="right-side"
-          display={"flex"}
-          flexDirection={"column"}
-          alignItems="flex-start"
-          justifyContent="flex-start"
-          textAlign={"left"}
+        <Box
+          display="flex"
+          flexDirection="column"
+          flexGrow="1"
+          flexShrink="0"
+          flexBasis={{ base: "100px", sm: "100px", md: "300px", lg: "300px" }}
+          textAlign="left"
         >
           <Heading
-            className="recipe-health-labels-title"
-            fontSize={"14px"}
+            fontSize={{ base: "14px", lg: "16px" }}
             fontWeight="normal"
             mb="5px"
           >
             Health Labels:
           </Heading>
-          <Flex flexWrap={"wrap"} columnGap="2" rowGap={"1"} mb="10px">
+          <Flex flexWrap="wrap" columnGap="2" rowGap="2" mb="10px">
             {recipe.healthLabels.map((label) => {
               return (
-                <Badge
-                  className="recipe-health-label"
-                  fontSize={"12px"}
-                  backgroundColor={"#D6BCFA"}
-                  key={label}
-                >
+                <Badge fontSize="12px" backgroundColor="#D6BCFA" key={label}>
                   {label}
                 </Badge>
               );
             })}
           </Flex>
           <Heading
-            className="recipe-diet-title"
-            fontSize={"14px"}
+            fontSize={{ base: "14px", lg: "16px" }}
             fontWeight="normal"
             mb="5px"
           >
             Diet:
           </Heading>
-          <Flex
-            className="diet-title-labels"
-            flexWrap={"wrap"}
-            columnGap="2"
-            rowGap={"1"}
-            mb="10px"
-          >
+          <Flex flexWrap="wrap" columnGap="2" rowGap="2" mb="10px">
             {recipe.dietLabels.map((label) => {
               return (
                 <Badge
                   className="diet-title-label"
-                  backgroundColor={"#C6F6D5"}
+                  backgroundColor="#C6F6D5"
+                  fontSize="12px"
                   key={label}
                 >
                   {label}
@@ -147,101 +146,87 @@ export const RecipeChoice = ({ recipe, onClick }) => {
           </Flex>
 
           <Heading
-            className="recipe-cautions"
-            fontSize={"14px"}
+            fontSize={{ base: "14px", lg: "16px" }}
             fontWeight="normal"
             mb="5px"
           >
             Cautions:
           </Heading>
-          <Flex
-            className="recipe-cautions-labels"
-            flexWrap={"wrap"}
-            columnGap="2"
-            rowGap={"1"}
-            mb="10px"
-          >
+          <Flex flexWrap="wrap" columnGap="2" rowGap="2" mb="10px">
             {recipe.cautions.map((label) => {
               return (
-                <Badge
-                  className="recipe-cautions-label"
-                  backgroundColor={"#FC8181"}
-                  key={label}
-                >
+                <Badge backgroundColor="#FC8181" fontSize="12px" key={label}>
                   {label}
                 </Badge>
               );
             })}
           </Flex>
-          <Heading
-            className="recipe-total-nutrients-title"
-            fontSize={"14px"}
-            mb="10px"
-          >
+          <Heading fontSize={{ base: "14px", lg: "16px" }} mb="10px">
             Total nutrients:
           </Heading>
           <Flex
-            flexDirection={"row"}
-            flexWrap="wrap"
-            columnGap={"3"}
+            flexDir="row"
+            wrap="wrap"
+            justify="flex-start"
+            columnGap={{ base: "3", lg: "5" }}
             rowGap="1"
             mb="15px"
           >
-            <Flex flexDirection={"column"} justifyContent="space-evenly">
-              <Flex>
+            <Flex flexDir="column" justify="space-evenly">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.ENERC_KCAL.quantity)}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 CALORIES
               </Text>
             </Flex>
-            <Flex flexDirection={"column"}>
-              <Flex>
+            <Flex flexDir="column">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.CHOCDF.quantity)}
                 {recipe.totalNutrients.CHOCDF.unit}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 {recipe.totalNutrients.CHOCDF.label.toUpperCase()}
               </Text>
             </Flex>
-            <Flex flexDirection={"column"}>
-              <Flex>
+            <Flex flexDir="column">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.PROCNT.quantity)}
                 {recipe.totalNutrients.PROCNT.unit}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 {recipe.totalNutrients.PROCNT.label.toUpperCase()}
               </Text>
             </Flex>
-            <Flex flexDirection={"column"}>
-              <Flex>
+            <Flex flexDir="column">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.FAT.quantity)}
                 {recipe.totalNutrients.FAT.unit}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 {recipe.totalNutrients.FAT.label.toUpperCase()}
               </Text>
             </Flex>
-            <Flex flexDirection={"column"}>
-              <Flex>
+            <Flex flexDir="column">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.CHOLE.quantity)}
                 {recipe.totalNutrients.CHOLE.unit}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 {recipe.totalNutrients.CHOLE.label.toUpperCase()}
               </Text>
             </Flex>
-            <Flex flexDirection={"column"}>
-              <Flex>
+            <Flex flexDir="column">
+              <Flex fontSize={{ base: "14px", lg: "16px" }}>
                 {Math.round(recipe.totalNutrients.NA.quantity)}
                 {recipe.totalNutrients.NA.unit}
               </Flex>
-              <Text fontWeight={"bold"} fontSize="12px">
+              <Text fontWeight="bold" fontSize={{ base: "11px", lg: "14px" }}>
                 {recipe.totalNutrients.NA.label.toUpperCase()}
               </Text>
             </Flex>
           </Flex>
-        </Container>
+        </Box>
       </Container>
     </Container>
   );
