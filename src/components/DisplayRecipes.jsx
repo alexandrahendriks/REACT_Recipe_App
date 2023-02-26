@@ -1,18 +1,17 @@
-import { Grid, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { DisplayRecipe } from "./UI/DisplayRecipe";
 
 export const DisplayRecipes = ({ recipes, onClick }) => {
   return (
     <Flex
-      className="flex-wrapper"
       flexDir={{ base: "column", md: "row" }}
-      flexWrap={"wrap"}
-      flexBasis="50px"
-      grow={"1"}
+      wrap="wrap"
+      basis="50px"
+      grow="1"
       shrink="0"
-      columnGap={{ base: "1", sm: "3", md: "1", lg: "5" }}
+      columnGap={{ base: "1", sm: "3", md: "3", lg: "5" }}
       m="10px"
-      justifyContent={"center"}
+      justify="center"
     >
       {recipes.map((recipe) => (
         <DisplayRecipe
@@ -38,18 +37,3 @@ export const DisplayRecipes = ({ recipes, onClick }) => {
     </Flex>
   );
 };
-
-{
-  /* <Grid
-  className="recipes-grid"
-  gridTemplateColumns={{
-    base: "repeat(1, 1fr)",
-    md: "repeat(2, 1fr)",
-    lg: "repeat(4, 1fr)",
-  }}
-  gridTemplateRows={"auto"}
-  gap={3}
-  justifyContent={{ lg: "center" }}
-></Grid>;
- */
-}
