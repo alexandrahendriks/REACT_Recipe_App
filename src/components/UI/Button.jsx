@@ -6,5 +6,3 @@ export const Button = ({ onClick, ...props }) => {
     </CButton>
   );
 };
-
-//DONE!!!
