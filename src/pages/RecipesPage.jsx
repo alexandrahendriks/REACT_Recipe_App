@@ -10,8 +10,6 @@ export const RecipesPage = () => {
 
   return (
     <Container
-      className="App"
-      padding="0px"
       backgroundColor="rgb(22, 127, 180)"
       maxWidth="100vw"
       minHeight="100vh"
@@ -24,14 +22,13 @@ export const RecipesPage = () => {
       ) : (
         <>
           <Center
-            className="main-paige"
-            pt="30px"
+            pt="40px"
             pb="80px"
             display="flex"
             flexDir="column"
             justifyContent="center"
           >
-            <Heading marginBottom="25px" color="white">
+            <Heading mb="25px" color="white">
               {title}
             </Heading>
             <SearchRecipe recipes={data.hits} onClick={setUserRecipe} />
@@ -41,5 +38,3 @@ export const RecipesPage = () => {
     </Container>
   );
 };
-
-//DONE!!!
