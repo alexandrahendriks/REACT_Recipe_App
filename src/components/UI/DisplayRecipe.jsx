@@ -16,10 +16,14 @@ export const DisplayRecipe = ({
     <Flex
       className="recipes"
       backgroundColor="white"
-      flexDirection={"column"}
+      flexDirection={{ base: "column" }}
       marginBottom={"20px"}
       borderTopRadius={"10px"}
       borderBottomRadius={"10px"}
+      maxWidth={{ base: "300px" }}
+      flexBasis="300px"
+      grow="1"
+      shrink="0"
       id={id}
       onClick={() => onClick(recipe)}
     >
@@ -37,9 +41,13 @@ export const DisplayRecipe = ({
         className="text"
         display={"flex"}
         flexDirection={"column"}
+        //width={"200%"}
+
         alignItems={"center"}
         pt={"20px"}
         pb={"20px"}
+        ml={"10px"}
+        mr={"10px"}
       >
         <Badge className="meal-type" color={"grey"} backgroundColor={"white"}>
           {mealType}

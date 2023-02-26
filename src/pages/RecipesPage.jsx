@@ -13,7 +13,7 @@ export const RecipesPage = () => {
       className="App"
       padding="0px"
       backgroundColor="rgb(22, 127, 180)"
-      maxWidth="auto"
+      maxWidth="100vw"
       minHeight="100vh"
       textAlign="center"
     >
@@ -24,6 +24,7 @@ export const RecipesPage = () => {
       ) : (
         <>
           <Center
+            className="main-paige"
             pt="30px"
             pb="80px"
             display="flex"
