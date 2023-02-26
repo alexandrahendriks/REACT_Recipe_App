@@ -14,5 +14,3 @@ export const TextInput = ({ onChange, ...props }) => {
     />
   );
 };
-
-//DONE!!
