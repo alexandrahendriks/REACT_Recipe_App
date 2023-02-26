@@ -6,7 +6,7 @@ import { TextInput } from "./UI/TextInput";
 export const SearchRecipe = ({ recipes, onClick }) => {
   const [searchField, setSearchField] = useState("");
 
-  //Filter recipes on name and health labels
+  //Filter recipes on name
   const matchedRecipes = recipes.filter((recipe) => {
     return recipe.recipe.label
       .toLowerCase()
