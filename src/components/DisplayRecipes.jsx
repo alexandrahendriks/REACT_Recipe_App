@@ -7,13 +7,12 @@ export const DisplayRecipes = ({ recipes, onClick }) => {
       className="flex-wrapper"
       flexDir={{ base: "column", md: "row" }}
       flexWrap={"wrap"}
-      width={"100%"}
       flexBasis="50px"
       grow={"1"}
       shrink="0"
-      columnGap={"8"}
+      columnGap={{ base: "1", sm: "3", md: "1", lg: "5" }}
       m="10px"
-      justifyContent={"space-evenly"}
+      justifyContent={"center"}
     >
       {recipes.map((recipe) => (
         <DisplayRecipe
