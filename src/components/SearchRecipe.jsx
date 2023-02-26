@@ -8,12 +8,9 @@ export const SearchRecipe = ({ recipes, onClick }) => {
 
   //Filter recipes on name and health labels
   const matchedRecipes = recipes.filter((recipe) => {
-    return (
-      recipe.recipe.label.toLowerCase().includes(searchField.toLowerCase()) ||
-      recipe.recipe.healthLabels.includes((label) =>
-        label.toLowerCase().includes(searchField.toLowerCase())
-      )
-    );
+    return recipe.recipe.label
+      .toLowerCase()
+      .includes(searchField.toLowerCase());
   });
   //Setting state from input field
   const handleChange = (event) => {
@@ -23,16 +20,9 @@ export const SearchRecipe = ({ recipes, onClick }) => {
   return (
     <>
       <TextInput onChange={handleChange} />
-      <Flex
-        className="display-recipes-flex"
-        ml={"15px"}
-        mr={"15px"}
-        justifyContent="center"
-      >
+      <Flex ml="15px" mr="15px">
         <DisplayRecipes onClick={onClick} recipes={matchedRecipes} />
       </Flex>
     </>
   );
 };
-
-//DONE!!!!
