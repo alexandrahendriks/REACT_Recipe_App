@@ -9,8 +9,14 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { Button } from "./UI/Button";
+import React, { useEffect } from "react";
 
 export const RecipeChoice = ({ recipe, onClick }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Container
       backgroundColor="white"
